@@ -12,9 +12,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     textAlign: "center",
   },
-  list: {
-    listStyleType: "none",
-  },
 }));
 
 export default function SpacingGrid() {
@@ -50,23 +47,17 @@ export default function SpacingGrid() {
         <Grid container spacing={3}>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-              <ul className={classes.list}>
-                {(listA) ? listA.map(item => <li>{item}</li>) : <li>empty</li>}
-              </ul>
+                {(listA) ? listA.map(item => <p>{item}</p>) : <p>empty</p>}
             </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-              <ul className={classes.list}>
-                {(listOverlap) ? listOverlap.map(item => <li>{item}</li>) : <li>No overlapping skills</li>}
-              </ul>
+              {(listOverlap) ? listOverlap.map(item => <p>{item}</p>) : <p>empty</p>}
             </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-              <ul className={classes.list}>
-                {(listB) ? listB.map(item => <li>{item}</li>) : <li>empty</li>}
-              </ul>
+              {(listB) ? listB.map(item => <p>{item}</p>) : <p>empty</p>}
             </Paper>
           </Grid>
         </Grid>
