@@ -10,23 +10,14 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     margin: `${theme.spacing(2)}px auto`,
     padding: theme.spacing(3),
-  },
-  title: {
-    padding: theme.spacing(2),
-    height: "100",
     textAlign: "center",
-    width: "100%",
   },
   list: {
     listStyleType: "none",
   },
-  overlap: {
-    textAlign: "center",
-  }
-
 }));
 
-function SpacingGrid() {
+export default function SpacingGrid() {
   const classes = useStyles();
 
   var listA = ["hello", "yololo", "boiiiii"];
@@ -40,43 +31,43 @@ function SpacingGrid() {
 
         <Grid container spacing={3}>
           <Grid item xs={4}>
-              <Paper className={classes.title}>
-                <Typography variant="h5">Skills of Job A</Typography>
-              </Paper>
+            <Paper className={classes.paper}>
+              <Typography variant="h6">Skills of Job A</Typography>
+            </Paper>
           </Grid>
           <Grid item xs={4}>
-              <Paper className={classes.title}>
-                <Typography variant="h5">Overlapping Skills (50%)</Typography>
-              </Paper>
+            <Paper className={classes.paper}>
+              <Typography variant="h6">Overlapping Skills (50%)</Typography>
+            </Paper>
           </Grid>
           <Grid item xs={4}>
-              <Paper className={classes.title}>
-                <Typography variant="h5">Skills of Job B</Typography>
-              </Paper>
+            <Paper className={classes.paper}>
+              <Typography variant="h6">Skills of Job B</Typography>
+            </Paper>
           </Grid>
         </Grid>
 
         <Grid container spacing={3}>
           <Grid item xs={4}>
-                <Paper className={classes.paper}>
-                  <ul className={classes.list}>
-                    {(listA) ? listA.map(item => <li>{item}</li>) : <li>empty</li>}
-                  </ul>
-                </Paper>
+            <Paper className={classes.paper}>
+              <ul className={classes.list}>
+                {(listA) ? listA.map(item => <li>{item}</li>) : <li>empty</li>}
+              </ul>
+            </Paper>
           </Grid>
           <Grid item xs={4}>
-                <Paper className={classes.paper}>
-                  <ul className={classes.list}>
-                    {(listOverlap) ? listOverlap.map(item => <li>{item}</li>) : <li>No overlapping skills</li>}
-                  </ul>
-                </Paper>
+            <Paper className={classes.paper}>
+              <ul className={classes.list}>
+                {(listOverlap) ? listOverlap.map(item => <li>{item}</li>) : <li>No overlapping skills</li>}
+              </ul>
+            </Paper>
           </Grid>
           <Grid item xs={4}>
-                <Paper className={classes.paper}>
-                  <ul className={classes.list}>
-                    {(listB) ? listB.map(item => <li>{item}</li>) : <li>empty</li>}
-                  </ul>
-                </Paper>
+            <Paper className={classes.paper}>
+              <ul className={classes.list}>
+                {(listB) ? listB.map(item => <li>{item}</li>) : <li>empty</li>}
+              </ul>
+            </Paper>
           </Grid>
         </Grid>
 
@@ -84,5 +75,3 @@ function SpacingGrid() {
     </Container>
   );
 }
-
-export default SpacingGrid;

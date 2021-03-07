@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     margin: `${theme.spacing(2)}px auto`,
     padding: theme.spacing(3),
+    textAlign: "center",
   },
   form: {
     width: '100%',
