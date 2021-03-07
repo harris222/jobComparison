@@ -130,6 +130,7 @@ class ChromeDriver:
         '''
         ## Only get the first title
         def title_preprocess(title):
+            # title = re.sub(r"[Cc]o[\-\ ]","", title)
             split_titles = re.split(r"\,|\-|\||\&|\:|\/|and", title)
             return split_titles[0].strip()
                 

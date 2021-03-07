@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -26,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function getData(profession) {
-  return fetch('/data', {
-    method: "POST",
-    headers: { "Content-Type" : "application/json" },
+function getData(link, profession, requestType, MIMEType) {
+  return fetch(link, {
+    method: requestType,
+    headers: { "Content-Type" : MIMEType},
     body: profession
   })
 }
@@ -45,6 +45,10 @@ export default function App() {
   const [description1, setDescription1] = useState("...");
   const [description2, setDescription2] = useState("...");
   const [overlap, setOverlap] = useState("0%");
+  const [skillOverlap, setSkillOverlap] = useState([]);
+  const [skillProf1, setSkillProf1] = useState([]);
+  const [skillProf2, setSkillProf2] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleProfChange1 = (e) => {
     setProf1(e.target.value);
@@ -54,27 +58,138 @@ export default function App() {
     setProf2(e.target.value);
   }
 
-  const submitButton = (e) => {
+  const setOverlaps = (skillProf1, skillProf2) => {
+    let arr = []
+    function strip(string) { 
+      return string.replace(/^\s+|\s+$/g, ''); 
+    } 
+    skillProf1.forEach(skill1 => {
+      skillProf2.forEach(skill2 => {
+        if (strip(skill1) === strip(skill2)){
+          arr.push(skill1);     
+          let index = skillProf1.indexOf(skill1);
+          if (index > -1) {
+            skillProf1.splice(index, 1);
+          }
+
+          index = skillProf2.indexOf(skill1);
+          if (index > -1){
+            skillProf2.splice(index, 1)
+          }
+        }
+      })
+    })
+
+    if (skillProf1.length + skillProf2.length == 0)
+      setOverlap("0%")
+    else 
+      setOverlap((arr.length / (skillProf1.length + skillProf2.length + arr.length) * 100).toFixed(2) + "%");
+    
+    setSkillOverlap(arr);
+    
+    /* Remove overlapped elements from prof1 and prof2 */
+    if (skillProf1.length != 0)
+      setSkillProf1(skillProf1);
+
+    if (skillProf2.length != 0)
+      setSkillProf2(skillProf2);
+  }
+  const submitButton = async (e) => {
     e.preventDefault();
     setProfession1(prof1);
     setProfession2(prof2);
     setDescription1("...");
     setDescription2("...");
     setOverlap("0%");
+    setSubmitted(true);
+
+    function Counter(array){
+      let counter = {}
+      array.forEach(x => counter[x] = (counter[x] || 0) + 1);
+      return counter;
+    }
+    /* Resolve */
+    await Promise.all([
+      getData("/data", prof1, "POST", "application/json")
+      .then(response => response.json())
+      .then(items => {
+        /* Update everything here */
+        setList({...list, "prof1" : items["0"]})
+        
+        let prof1_array = items["0"]
+        /* Set short desc */
+        let short_desc_array = prof1_array.slice(0, 2).map(x => x["short_desc"])
+        console.log(short_desc_array);
+        setDescription1(short_desc_array.join("\n").slice(0, 500)) // We should slice punctuation
+        
+        /* Set skills */
+        let skills_objects_array = prof1_array.map(x => x["skills"])
+        let skills_array = []
+
+        skills_objects_array.forEach(skills_object => 
+          skills_object.split(',').forEach(skill => 
+            skills_array.push(skill)
+          )
+        );
+        
+        let counter = Counter(skills_array);
+        let sortedCounter = Object.entries(counter).sort((a,b) => (b[1] - a[1]));
+        skills_array = sortedCounter.map(x => x[0]);
+        setSkillProf1(skills_array.slice(0, 30));
+      })
+      .catch(err => console.log(err)),
+      getData("/data", prof2, "POST", "application/json")
+      .then(response => response.json())
+      .then(items => {
+        /* Update everything here */
+        setList({...list, "prof2" : items["0"]})
+        
+        /* Set short desc */
+        let prof2_array = items["0"];
+        let short_desc_array = prof2_array.slice(0,2).map(x => x["short_desc"]);
+        setDescription2(short_desc_array.join("\n").slice(0, 500)) // We should slice punctuation
+
+        /* Set skills */
+        let skills_objects_array = prof2_array.map(x => x["skills"])
+        let skills_array = []
+
+        skills_objects_array.forEach(skills_object => 
+          skills_object.split(',').forEach(skill => 
+            skills_array.push(skill)
+          )
+        );
+        
+        let counter = Counter(skills_array);
+        let sortedCounter = Object.entries(counter).sort((a,b) => (b[1] - a[1]));
+        skills_array = sortedCounter.map(x => x[0]);
+        setSkillProf2(skills_array.slice(0, 30));
+    
+
+      })
+      .catch(err => console.log(err))
+    ]);
+    
+
+    
+  
   }
 
-  var listA = ["hello", "yololo", "boiiiii"];
-  var listOverlap = ["osahsvsv", "LISTOVERLAAAAP", "bromo"];
-  var listB = ["Ethan", "Harris", "Jason"];
-
   useEffect(() => {
-    getData()
-      .then(items => {
-        setList(items)
-      })
-  }, [])
+    setOverlaps(skillProf1, skillProf2)
+  }, [skillProf1, skillProf2]);
 
-  console.log(list.length)
+  // var skillProf1 = ["hello", "yololo", "boiiiii"];
+  // var skillOverlap = ["osahsvsv", "LISTOVERLAAAAP", "bromo"];
+  // var listB = ["Ethan", "Harris", "Jason"];
+  // var skillProf2 = null;
+
+  // useEffect(() => {
+  //   getData("./data", prof1)
+  //     .then(data => data.json())
+  //     .then(items => {
+  //       setList(items)
+  //     })
+  // }, [])
 
   return (
     <Container component="main">
@@ -82,7 +197,7 @@ export default function App() {
       <div className={classes.paper}>
         
         <Typography variant="h4" align="center">
-          Compare Required Skills
+          Job Skill Comparator
         </Typography>
 
         <form className={classes.form} noValidate onSubmit={submitButton}>
@@ -161,17 +276,17 @@ export default function App() {
         <Grid container spacing={3}>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-                {(listA) ? listA.map(item => <p>{item}</p>) : <p>empty</p>}
+                {(skillProf1 !== []) ? skillProf1.map(item => <p>{item}</p>) : <p>No skills for this profession</p>}
             </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-              {(listOverlap) ? listOverlap.map(item => <p>{item}</p>) : <p>empty</p>}
+              {(skillOverlap !== []) ? skillOverlap.map(item => <p>{item}</p>) : <p>No overlapping skills</p>}
             </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-              {(listB) ? listB.map(item => <p>{item}</p>) : <p>empty</p>}
+              {(skillProf2 !== []) ? skillProf2.map(item => <p>{item}</p>) : <p>No skills for this profession</p>}
             </Paper>
           </Grid>
         </Grid>
