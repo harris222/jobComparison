@@ -96,3 +96,205 @@ Traceback (most recent call last):
 selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="pj_6f4f5a9fe39a2d17" data-jk="6f4f5a9fe39a2d17" data-empn="6414874294560291" data-ci="364981538">...</div> is not clickable at point (454, 482). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
   (Session info: chrome=89.0.4389.82)
 
+2021-03-07 00:55:25,497 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 00:55:25,497 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 00:55:25,671 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 00:55:25,726 -- INFO -- Trying to download new driver from http://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_win32.zip
+2021-03-07 00:55:28,215 -- INFO -- Driver has been saved in cache [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23]
+2021-03-07 00:56:04,394 -- ERROR -- Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_6d8c30a57dc02190" data-jk="6d8c30a57dc02190" data-tn-component="organicJob">...</div> is not clickable at point (454, 507). Other element would receive the click: <div id="job-alert-popover-button" class="job-alert-popover-button">...</div>
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 148, in indeedGetJobs
+    title.click()
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_6d8c30a57dc02190" data-jk="6d8c30a57dc02190" data-tn-component="organicJob">...</div> is not clickable at point (454, 507). Other element would receive the click: <div id="job-alert-popover-button" class="job-alert-popover-button">...</div>
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:44:07,784 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 01:44:07,784 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 01:44:08,003 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 01:44:45,131 -- ERROR -- Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_410244d3b6a28710" data-jk="410244d3b6a28710" data-tn-component="organicJob">...</div> is not clickable at point (454, 521). Other element would receive the click: <input id="popover-button" type="submit" value="Send me new jobs" class="modal-interactable cleanuptst-indeed-serp-button">
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 149, in indeedGetJobs
+    title.click()
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_410244d3b6a28710" data-jk="410244d3b6a28710" data-tn-component="organicJob">...</div> is not clickable at point (454, 521). Other element would receive the click: <input id="popover-button" type="submit" value="Send me new jobs" class="modal-interactable cleanuptst-indeed-serp-button">
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:46:50,167 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 01:46:50,167 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 01:46:50,231 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 01:47:24,041 -- ERROR -- Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_2638ad1d2c7f9bb3" data-jk="2638ad1d2c7f9bb3" data-tn-component="organicJob">...</div> is not clickable at point (454, 485). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 149, in indeedGetJobs
+    title.click()
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_2638ad1d2c7f9bb3" data-jk="2638ad1d2c7f9bb3" data-tn-component="organicJob">...</div> is not clickable at point (454, 485). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:47:29,258 -- ERROR -- Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 151, in indeedGetJobs
+    vjsText = self.driver.find_element_by_id("vjs-content").text
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:47:36,613 -- ERROR -- Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 151, in indeedGetJobs
+    vjsText = self.driver.find_element_by_id("vjs-content").text
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:48:22,702 -- ERROR -- Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 151, in indeedGetJobs
+    vjsText = self.driver.find_element_by_id("vjs-content").text
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:48:30,382 -- ERROR -- Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 151, in indeedGetJobs
+    vjsText = self.driver.find_element_by_id("vjs-content").text
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 01:52:38,839 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 01:52:38,840 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 01:52:38,951 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 01:54:06,252 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 01:54:06,252 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 01:54:06,332 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 01:55:39,892 -- ERROR -- Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_2638ad1d2c7f9bb3" data-jk="2638ad1d2c7f9bb3" data-tn-component="organicJob">...</div> is not clickable at point (454, 485). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 149, in indeedGetJobs
+    title.click()
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="p_2638ad1d2c7f9bb3" data-jk="2638ad1d2c7f9bb3" data-tn-component="organicJob">...</div> is not clickable at point (454, 485). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 02:08:39,443 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 02:08:39,444 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 02:08:39,546 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 02:09:20,844 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 02:09:20,845 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 02:09:20,926 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 02:10:06,196 -- ERROR -- Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="pj_3d64d15fa585c269" data-jk="3d64d15fa585c269" data-empn="7584362062008554" data-ci="365215463">...</div> is not clickable at point (454, 510). Other element would receive the click: <div id="job-alert-popover-button" class="job-alert-popover-button">...</div>
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 149, in indeedGetJobs
+    title.click()
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="pj_3d64d15fa585c269" data-jk="3d64d15fa585c269" data-empn="7584362062008554" data-ci="365215463">...</div> is not clickable at point (454, 510). Other element would receive the click: <div id="job-alert-popover-button" class="job-alert-popover-button">...</div>
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 02:10:50,803 -- ERROR -- Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 151, in indeedGetJobs
+    vjsText = self.driver.find_element_by_id("vjs-content").text
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="vjs-content"]"}
+  (Session info: chrome=89.0.4389.82)
+
+2021-03-07 02:12:56,772 -- INFO -- Current google-chrome version is 89.0.4389
+2021-03-07 02:12:56,773 -- INFO -- Get LATEST driver version for 89.0.4389
+2021-03-07 02:12:56,848 -- INFO -- Driver [C:\Users\harri\.wdm\drivers\chromedriver\win32\89.0.4389.23\chromedriver.exe] found in cache
+2021-03-07 02:14:57,236 -- ERROR -- Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="pj_96fd04e1523b4393" data-jk="96fd04e1523b4393" data-empn="9463193751627257" data-ci="304112163">...</div> is not clickable at point (454, 494). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
+  (Session info: chrome=89.0.4389.82)
+Traceback (most recent call last):
+  File "..\ChromeDriver.py", line 149, in indeedGetJobs
+    title.click()
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\harri\Documents\Programming\Pure_Skills\Python\JobComparison\jobEnv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <div class="jobsearch-SerpJobCard unifiedRow row result clickcard" id="pj_96fd04e1523b4393" data-jk="96fd04e1523b4393" data-empn="9463193751627257" data-ci="304112163">...</div> is not clickable at point (454, 494). Other element would receive the click: <label class="popover-anywhere popover-small-locationtst">...</label>
+  (Session info: chrome=89.0.4389.82)
+
