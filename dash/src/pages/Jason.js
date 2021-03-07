@@ -13,13 +13,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     height: "auto",
     textAlign: "left",
-    width: "75%",
+    width: "100%",
   },
   title: {
     padding: theme.spacing(2),
     height: "100",
     textAlign: "center",
-    width: "75%",
+    width: "100%",
   },
   list: {
     listStyleType: "none",
@@ -48,7 +48,7 @@ function SpacingGrid() {
         <h4 className={classes.overlap}>OVERLAP 50%</h4>
       </div>
       <Grid container spacing={1} className={classes.container}>
-        <Grid container item xs={12} spacing={3} className={classes.container}>
+        <Grid container spacing={3} className={classes.container}>
           <Grid item xs={4}>
               <Paper className={classes.title} elevation={0}>
                 <Typography variant="h5">Skills of Job A</Typography>
@@ -65,7 +65,8 @@ function SpacingGrid() {
               </Paper>
           </Grid>
         </Grid>
-        <Grid container item xs={12} spacing={3} className={classes.container}>
+
+        <Grid container spacing={3} className={classes.container}>
           <Grid item xs={4}>
                 <Paper className={classes.paper} elevation={10}>
                   <ul className={classes.list}>
