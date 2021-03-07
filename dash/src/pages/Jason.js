@@ -3,17 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { Typography } from "@material-ui/core";
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
   paper: {
-    padding: theme.spacing(2),
-    height: "auto",
-    textAlign: "left",
-    width: "100%",
+    margin: `${theme.spacing(2)}px auto`,
+    padding: theme.spacing(3),
   },
   title: {
     padding: theme.spacing(2),
@@ -23,11 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     listStyleType: "none",
-  },
-  container: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
   },
   overlap: {
     textAlign: "center",
@@ -43,54 +34,54 @@ function SpacingGrid() {
   var listB = ["Ethan", "Harris", "Jason"];
 
   return (
-    <div className={classes.root}> 
-      <div>
-        <h4 className={classes.overlap}>OVERLAP 50%</h4>
-      </div>
-      <Grid container spacing={1} className={classes.container}>
-        <Grid container spacing={3} className={classes.container}>
+    <Container component="main">
+      <CssBaseline />
+      <div className={classes.paper}>
+
+        <Grid container spacing={3}>
           <Grid item xs={4}>
-              <Paper className={classes.title} elevation={0}>
+              <Paper className={classes.title}>
                 <Typography variant="h5">Skills of Job A</Typography>
               </Paper>
           </Grid>
           <Grid item xs={4}>
-              <Paper className={classes.title} elevation={0}>
-                <Typography variant="h5">Overlapping Skills</Typography>
+              <Paper className={classes.title}>
+                <Typography variant="h5">Overlapping Skills (50%)</Typography>
               </Paper>
           </Grid>
           <Grid item xs={4}>
-              <Paper className={classes.title} elevation={0}>
+              <Paper className={classes.title}>
                 <Typography variant="h5">Skills of Job B</Typography>
               </Paper>
           </Grid>
         </Grid>
 
-        <Grid container spacing={3} className={classes.container}>
+        <Grid container spacing={3}>
           <Grid item xs={4}>
-                <Paper className={classes.paper} elevation={10}>
+                <Paper className={classes.paper}>
                   <ul className={classes.list}>
                     {(listA) ? listA.map(item => <li>{item}</li>) : <li>empty</li>}
                   </ul>
                 </Paper>
           </Grid>
           <Grid item xs={4}>
-                <Paper className={classes.paper} elevation={10}>
+                <Paper className={classes.paper}>
                   <ul className={classes.list}>
                     {(listOverlap) ? listOverlap.map(item => <li>{item}</li>) : <li>No overlapping skills</li>}
                   </ul>
                 </Paper>
           </Grid>
           <Grid item xs={4}>
-                <Paper className={classes.paper} elevation={10}>
+                <Paper className={classes.paper}>
                   <ul className={classes.list}>
                     {(listB) ? listB.map(item => <li>{item}</li>) : <li>empty</li>}
                   </ul>
                 </Paper>
           </Grid>
         </Grid>
-      </Grid>
+
     </div>
+    </Container>
   );
 }
 
