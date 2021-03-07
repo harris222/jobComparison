@@ -125,23 +125,33 @@ class ChromeDriver:
         passwordInput.send_keys(password)
         self.driver.find_element_by_id("login-submit-button").click()
     def indeedGetJobs(self):
-        resultText = ""
-        Run= True
-        ## click on title and scrape text, until all titles have been exhausted
+        '''
+            Fetch information about jobs from 1 Indeed Page
+        '''
+        ## Only get the first title
+        def title_preprocess(title):
+            split_titles = re.split(r"\,|\-|\||\&|\:|\/|and", title)
+            return split_titles[0].strip()
+                
+        card_array = [] ## Format [(jobTitle, Description), ....]
+        Run = True
         
+        ## click on title and scrape text, until all titles have been exhausted
         while Run:
             try:
                 titles = self.driver.find_elements_by_css_selector(".jobsearch-SerpJobCard")
                 for title in titles:
-                    time.sleep(0.5)
-                    title.click()
-                    vjsText = self.driver.find_element_by_id("vjs-content").text
-                    # divide string into sentences and only capture sentences that contain
-                    # the word experience into the word count.
-                    for entry in re.split("[\.\:\n;]{1}", vjsText):
-                        if "experience" in entry:
-                            resultText += entry.replace("experience", "") 
-                            logging.info(entry.replace("experience", ""))
+                    try:
+                        title_name = title.find_element_by_css_selector(".jobtitle.turnstileLink").text
+                        title_name = title_preprocess(title_name)
+                        time.sleep(0.5)
+                        title.click()
+                        time.sleep(0.5)
+                        vjsText = self.driver.find_element_by_id("vjs-content").text
+                        card_array.append((title_name, vjsText))
+                    except SExceptions.NoSuchElementException as e:
+                        logging.exception(e)
+                        time.sleep(2)
 
                 Run = False
             except (KeyError, SExceptions.NoSuchElementException) as e:
@@ -153,7 +163,7 @@ class ChromeDriver:
                 ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
                 Run= True ## disable popup --> repeat operation
             
-        return resultText.strip()
+        return card_array
         ## then go to next page
         
     ## Get All Links Present on a page
